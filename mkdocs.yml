@@ -1,0 +1,31 @@
+site_name: Gimlet Documentation
+theme:
+  name: material
+#  palette:
+#    primary: yellow
+#    accent: teal
+#  features:
+#    - tabs
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Concepts:
+      - Goals for Gimlet: extensions/admonition.md
+      - GitOps: extensions/codehilite.md
+      - Architecture: extensions/footnotes.md
+  - Setup:
+      - Initial Setup: plugins/search.md
+      - Slack integration: plugins/minification.md
+      - Gimlet Agent: xxx.md
+      - Gitops Repository: extensions/metadata.md
+      - Master Template: extensions/permalinks.md
+  - For Developers:
+      - Deploying a new service: releases/5.md
+      - .gimlet.yaml: releases/4.md
+      - Ad-hoc deploys: releases/changelog.md
+      - Rollback: releases/changelog.md
+      - Deployment errors: vvv.md
+  - FAQ: customization.md
