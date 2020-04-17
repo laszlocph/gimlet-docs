@@ -10,7 +10,6 @@ extra_css:
 nav:
   - Home: index.md
   - Concepts:
-      - Goals for Gimlet: concepts/goals.md
       - GitOps: concepts/gitops.md
       - Architecture: concepts/architecture.md
   - Setup:
