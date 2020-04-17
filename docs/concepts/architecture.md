@@ -2,6 +2,8 @@
 
 Gimlet has a client-server architecture.
 
+## Overview
+
 ![Gimlet architecture](./architecture.svg)
 
 **Gimlet Agent**
