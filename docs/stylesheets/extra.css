@@ -1,24 +1,24 @@
 :root {
 
     /* Default color shades */
-    /*--md-default-fg-color: #65D6AD;*/
-    /*--md-default-fg-color--light: #65D6AD;*/
-    /*--md-default-fg-color--lighter: #65D6AD;*/
-    /*--md-default-fg-color--lightest: #65D6AD;*/
+    /*--md-default-fg-color: #65D6AD;*/ /*body text*/
+    /*--md-default-fg-color--light: #65D6AD;*/ /*header text*/
+    /*--md-default-fg-color--lighter: #65D6AD;*/ /*search box, footer*/
+    --md-default-fg-color--lightest: #65D6AD; /*misc*/
     /*--md-default-bg-color:               ...;*/
-    /*--md-default-bg-color--light:        ...;*/
+    /*--md-default-bg-color--light:        #65D6AD;*/
     /*--md-default-bg-color--lighter:      ...;*/
     /*--md-default-bg-color--lightest:     ...;*/
 
     /* Primary color shades */
-    /*--md-primary-fg-color:               #FADB5F;*/
-    /*--md-primary-fg-color--light:        ...;*/
-    /*--md-primary-fg-color--dark:         ...;*/
-    /*--md-primary-bg-color:               #65D6AD;*/
-    /*--md-primary-bg-color--light:        #65D6AD;*/
+    --md-primary-fg-color:               #199473;   /* navbar, menu, links */
+    --md-primary-fg-color--light:        #65D6AD;
+    --md-primary-fg-color--dark:         #65D6AD;
+    --md-primary-bg-color:               #C6F7E2;  /* navbar heading */
+    --md-primary-bg-color--light:        #65D6AD;
 
     /* Accent color shades */
-    /*--md-accent-fg-color:                ...;*/
+    --md-accent-fg-color:                #65D6AD;
     /*--md-accent-fg-color--transparent:   ...;*/
     /*--md-accent-bg-color:                ...;*/
     /*--md-accent-bg-color--light:         ...;*/
