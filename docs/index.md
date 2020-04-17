@@ -1,17 +1,11 @@
-# Welcome to MkDocs
+# Welcome
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Start with **Concepts** to understand what Gimlet is about, 
 
-## Commands
+then continue with the **Setup** guides if you are a cluster administrator, 
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+or with the **For Developers** section if you are looking to use Gimlet in your day to day workflow.
 
-## Project layout
+## TLDR
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLjJkiSWPwuPJKcQiWF26EA1bdtRKSeowk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

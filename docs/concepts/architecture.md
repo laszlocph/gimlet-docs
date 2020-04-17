@@ -30,4 +30,9 @@ The GitOps Repository holds the Kubernetes manifests of your applications.
 
 FluxCD is the GitOps controller. It continuously applies manifest changes to the Kubernetes cluster.
 
+## Deepdive videos
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLjJkiSWPwuPKG_3X7WsOtfr4MpcdjRzn7" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 
