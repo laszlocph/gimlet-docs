@@ -12,9 +12,10 @@ To pin it even more down, Gimlet is using the GitOps term as a synonym of the Fl
 
 ## In a nutshell
 
-CI pipelines do not apply (with kubectl or helm) Kubernetes manifests on the cluster anymore.
+CI pipelines do not apply (with kubectl or helm) Kubernetes manifests on the cluster anymore. Instead, you record the desired state in a git repository, 
+and the GitOps controller is responsible to apply the changes on the Kubernetes cluster.
 
-Instead, the desired state is recorded in a git repository, and the gitops controller is responsible to apply the changes on the Kubernetes cluster. The gitops controller can be looked at as an endless loop that runs `kubectl apply` if anything changed in git.
+The GitOps controller can be looked at as an endless loop that runs `kubectl apply` if anything changes in git. Gimlet uses FluxCD as the GitOps controller.
 
 Gimlet is encapsulating all the logic to update the gitops repository in a consistent, environment aware fashion.
 

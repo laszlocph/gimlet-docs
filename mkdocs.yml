@@ -21,9 +21,11 @@ nav:
   - For Developers:
       - Deploying a new service: developers/deploy.md
       - .gimlet.yaml: developers/gimlet-yaml.md
-      - Ad-hoc deploys: developers/adhoc-deploy.md
+      - Deployment workflows: developers/deploy-workflows.md
       - Rollback: developers/rollback.md
       - Deployment errors: developers/errors.md
+  - Reference:
+      - Deployment options: reference/options.md
   - FAQ: faq.md
 
 extra:
