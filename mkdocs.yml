@@ -20,15 +20,21 @@ nav:
       - Master Template: setup/master-template.md
   - For Developers:
       - Deploying a new service: developers/deploy.md
+      - The repository UI: developers/ui.md
       - .gimlet.yaml: developers/gimlet-yaml.md
       - Deployment workflows: developers/deploy-workflows.md
       - Rollback: developers/rollback.md
       - Deployment errors: developers/errors.md
   - Reference:
       - Deployment options: reference/options.md
+      - Github Integration: reference/github.md
   - FAQ: faq.md
 
 extra:
   social:
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/laszlocph
+
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences
