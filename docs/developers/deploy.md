@@ -62,7 +62,7 @@ Set the few required fields to get started, Gimlet provides good defaults for th
     If you prefer you can skip using the Gimlet UI, and enable deployment right in your source code.
     Follow the [`.gimlet.yaml`](developers/gimlet-yaml.md) guide for more details
 
-    ```
+    ```yaml
     envs:
       - env: staging
         name: website

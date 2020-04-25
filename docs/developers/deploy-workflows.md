@@ -2,6 +2,8 @@
 
 On this page you can see how you can deploy any version on-demand, and how to automate deployment in your workflow.
 
+## How Gimlet works together with CI pipelines
+
 ## Deploying any version ad-hoc
 
 > If you don't build a Docker image in your CI setup for all revisions..
@@ -15,3 +17,5 @@ On this page you can see how you can deploy any version on-demand, and how to au
 ## Deploy on git tag
 
 ## Deploy on master branch
+
+## Deploy triggers
