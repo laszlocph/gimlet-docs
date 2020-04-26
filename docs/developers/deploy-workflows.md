@@ -7,27 +7,30 @@ On this page you will learn how Gimlet can be added to your software delivery pi
 ## How you used to deploy with CI
 
 In a typical CI pipeline, you latch on the deployment step as the very last step of the workflow, 
-and you control when to deploy your application to a given environment with branch and event conditions.
+and you control when to deploy your application with branch and event conditions.
 
 You develop a script or use a CI plugin for the deploy, and parameterize each deploy step with environment specific variables.
 
 With multiple environments, rollback steps this becomes hairy, and while it scales to some degree, 
-pipeline configuration diverge from project to project and becomes a maintenance burden.
+pipeline configuration diverge from project to project, and becomes a maintenance burden.
 
 ## Gimlet hooks into your existing CI pipeline through Github statuses
 
-Gimlet encapsulates all the deployment logic, so your CI pipeline can focus on things it really shines at. Running test, generating build artifacts.
+Gimlet encapsulates all the deployment logic, so your CI pipeline can focus on things it really shines at. Running test, and generating build artifacts.
+Gimlet does the deployment and rollback tasks, and not your CI.
 
-Gimlet listens on Github Status lines and kicks in when your CI is done, and reports success back to Github through a status line.
+Gimlet hooks into your existing CI setup, watches when your CI is finished then kicks right in to deploy.
 
-You have seen Github Status lines before on your Pull Requests, showing if your automated tests are passing.
-Or by clicking on the green tick mark in your commit list on Github.
+It is able to do that as it is watching the Github Statuses that your CI is reporting to Github.
+
+These Github Status lines are the same as the ones on your Pull Requests, showing if your automated tests are passing.
+Or you can also see them by clicking on the green tick mark in your commit list on Github.
 
 ## Gimlet Triggers
 
-A Gimlet Trigger is a regular expression on Github Status line context.
+A Gimlet Trigger is a regular expression on Github Status line.
 
-Gimlet runs if a status is published to Github with a success state, and the context matches the regular expression.
+Gimlet runs if a status is published to Github with a success state, and the Github Status matches the regular expression.
 
 #### Github status examples
 Don't worry, you don't have to publish anything from your CI pipeline.
@@ -41,26 +44,26 @@ CI engines send Github Statuses automatically: CircleCI sends a status line for 
 #### Gimlet Trigger examples
 
 Given a CircleCI status line `ci/circleci: docker-build-and-push`, 
-a Gimlet trigger that runs every time there is a new image can be written as `.*docker-build-and-push`
+a Gimlet trigger that runs every time when there is a new image, can be written as `.*docker-build-and-push`
 
 
 ## Deploying on common workflow events with Gimlet
 
 #### Deploying any version on-demand
 
-On-demand deploy is done on the UI. See [Deploy a revision section](/developers/deploy#deploy-a-revision) from the Deploying a new service guide.
+On-demand deploy is done on the UI. See [Deploy a revision](/developers/deploy#deploy-a-revision) section from the Deploying a new service guide.
 
 #### Deploy automatically when a new image is built
 
-Given a CircleCI job where you build and push a docker image, with name `docker-build-and-push`. CircleCI publishes a status line `ci/circleci: docker-build-and-push`, 
+Given a CircleCI job where you build and push a docker image, with name `docker-build-and-push`. CircleCI publishes a status line `ci/circleci: docker-build-and-push`. 
 
-The Gimlet trigger that runs every time there is a new image is written as `.*docker-build-and-push`
+The Gimlet trigger that runs every time this job is successful is written as `.*docker-build-and-push`
 
 #### Deploy on git push
 
 Given a Drone.io pipeline that builds and publishes a Docker image on git push to the master branch.
 
-Drone.io sends a `continuous-integration/drone/push` status line to Github, and you can write `.*/push` as a Gimlet trigger.
+Drone.io sends a `continuous-integration/drone/push` status line to Github, and you can write `.*/push` as a Gimlet trigger to match this event, and trigger the deploy with Gimlet.
 
 !!! note ""
 
@@ -68,7 +71,7 @@ Drone.io sends a `continuous-integration/drone/push` status line to Github, and 
 
 #### Deploy on git tag
 
-Given a Drone.io pipeline that builds and publishes a Docker image on git tag on the master branch.
+Given a Drone.io pipeline that builds and publishes a Docker image on git tag.
 
 Drone.io sends a `continuous-integration/drone/tag` status line to Github, and you can write `.*/tag` as a Gimlet trigger.
 
