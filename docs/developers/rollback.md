@@ -26,7 +26,7 @@ You can track your most recent releases:
 
 !!! note ""
 
-    - In case you would like to get a better undersstanding of GitOps check out the [GitOps](/concepts/gitops) page
+    - In case you would like to get a better understanding of GitOps, check out the [GitOps](/concepts/gitops) page
     - or to see how Gimlet works with the GitOps repository, check the [How components interact](/concepts/architecture#how-components-interact) section.
 
 ## Rolling back

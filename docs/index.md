@@ -1,10 +1,10 @@
 # Welcome
 
-Start with **Concepts** to understand what Gimlet is about, 
+Start with [Deploying a new service](/developers/deploy) to quickly get started.
 
-then continue with the **Setup** guides if you are a cluster administrator, 
+Learn about the concepts in [Architecture](/concepts/architecture).
 
-or with the **For Developers** section if you are looking to use Gimlet in your day to day workflow.
+See the [FAQ](/faq) for a quick orientation.
 
 ## TLDR
 
