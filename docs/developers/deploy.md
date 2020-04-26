@@ -79,14 +79,12 @@ Let's trigger an ad-hoc deployment now that you have configured a deployment env
 
 ![Deploy](./deploy.png)
 
-Pick the latest commit from the commit list and in the hamburger menu on the right side click `Deploy to staging`.
-Given that you configured the *staging* environment in the previous step.
+Pick the any commit from the commit list and in the hamburger menu on the right side click `Deploy to staging`
+- given that you configured the *staging* environment in the previous step.
 
 !!! note ""
 
-    Please note that the ad-hoc deploy button will only be displayed if you have a Docker image built already for the given commit.
+    Please note that the ad-hoc deploy will only succeed if you have a Docker image built already for the given commit.
     
     Revisit the *Image name* and *Image tag* fields in the [Set mandatory fields](#set-the-mandatory-fields) section to see what you configured.
     Jump to the [Deployment workflows](deploy-workflows.md) guide for more information on CI and Gimlet interplay.
-
-

@@ -21,8 +21,8 @@ nav:
   - For Developers:
       - Deploying a new service: developers/deploy.md
       - The repository UI: developers/ui.md
-      - .gimlet.yaml: developers/gimlet-yaml.md
       - Deployment workflows: developers/deploy-workflows.md
+      - .gimlet.yaml: developers/gimlet-yaml.md
       - Rollback: developers/rollback.md
       - Deployment errors: developers/errors.md
   - Reference:
