@@ -25,6 +25,7 @@ nav:
       - .gimlet.yaml: developers/gimlet-yaml.md
       - Rollback: developers/rollback.md
       - Deployment errors: developers/errors.md
+      - Preview environments: developers/preview.md
   - Reference:
       - Deployment options: reference/options.md
       - Github Integration: reference/github.md
