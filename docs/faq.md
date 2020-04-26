@@ -42,4 +42,4 @@
     FluxCD is a brilliant tool, but you need glue to manage your environments, templating, etc. Gimlet is here to solve that.
     
     ArgoCD is a more feature rich GitOps tool. Gimlet and ArgoCD are more of a direct competitors.
-    However Gimlet aims to assist not just in deployment, but in other areas as well, like application operation and developer on-boarding.
+    However Gimlet aims to assist not just in deployment, but in other areas as well, like application operation and developer on-boarding, education.
