@@ -24,7 +24,6 @@ nav:
       - Deployment workflows: developers/deploy-workflows.md
       - .gimlet.yaml: developers/gimlet-yaml.md
       - Rollback: developers/rollback.md
-      - Deployment errors: developers/errors.md
       - Preview environments: developers/preview.md
   - Reference:
       - Deployment options: reference/options.md
@@ -39,3 +38,4 @@ extra:
 markdown_extensions:
   - admonition
   - pymdownx.superfences
+  - pymdownx.details
