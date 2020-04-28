@@ -14,6 +14,8 @@ Gimlet encapsulates all the logic to manage applications, environments in the Gi
 
 ![Gimlet architecture](../concepts/architecture.svg)
 
+See the [Architecture](/concepts/architecture) guide for a full description.
+
 ## GitOps repository structure
 
 Gimlet uses the following folder structure in the GitOps repo:
@@ -73,4 +75,4 @@ Gimlet uses the following folder structure in the GitOps repo:
 
 !!! note ""
 
-    See the [Master Template](/reference/gitops-repo) guide to see how the Master Template is structured.
+    See the [Master Template](/setup/master-template) guide to see how the Master Template is structured.

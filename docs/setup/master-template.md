@@ -10,9 +10,9 @@ On this page you learn what is a Gimlet Master Template and how to tailor it to 
 
 Gimlet uses a generic template for new deployments.
 
-When you create a new deployment, or change an existing one, the options you have are coming from the Master Template.
+When you create a new deployment, or change an existing one, the deployment settings on the UI, and the fields available in `.gimlet.yaml` are coming from the Master Template.
 
-The Master Template is part of the GitOps repository, and you are free to look at it, or change it to your needs.
+The Master Template is part of the GitOps repository, and you are free to look at it, or alter it to your needs.
 
 !!! note ""
 
@@ -22,7 +22,7 @@ The Master Template is part of the GitOps repository, and you are free to look a
 
 The Gimlet Master Template is a *Kustomize* based template.
 
-Using the `.gimlet.yaml` file or the settings given on the UI, Gimlet constructs a valid *Kustomize* template for the application.
+Using the `.gimlet.yaml` file or the deployment settings given on the UI, Gimlet constructs a valid *Kustomize* template for the application.
 
 The available options are defined in the `questions.yaml` which is then merged with the application settings to get the application yamls 
 

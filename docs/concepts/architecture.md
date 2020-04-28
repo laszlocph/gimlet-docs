@@ -34,7 +34,22 @@ FluxCD is the GitOps controller. It continuously applies manifest changes to the
 
 ## How components interact
 
-TODO
+When a Gimlet deployment is triggered - either on-demand from the UI, or by a workflow trigger - the Gimlet Server looks for the deployment configuration
+and generates an updated application manifest, which it then puts in the GitOps repository.
+
+FluxCD is deployed in the deployment environment and listens for changes in the GitOps repository's releasees folder.
+If it sees a change, it will apply it on the cluster.
+
+The Gimlet Agent is also running in the deployment environment, and streams a realtime Kubernetes state to the Gimlet Server. Which then streams to the UI.
+
+
+!!! note ""
+
+    To learn more about the GitOps repository, see the [The GitOps repository](/reference/gitops-repo) page
+    
+    To learn more about workflow triggers, see the [Deployment workflows](/developers/deploy-workflows) page
+
+
 
 ## Deepdive videos
 
