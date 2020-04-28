@@ -47,6 +47,8 @@ The Gimlet Agent is also running in the deployment environment, and streams a re
 
     To learn more about the GitOps repository, see the [The GitOps repository](/reference/gitops-repo) page
     
+    To learn more about on-demand deploys and service configuration, see the [Deploying a new service](/developers/deploy) page
+
     To learn more about workflow triggers, see the [Deployment workflows](/developers/deploy-workflows) page
 
 
