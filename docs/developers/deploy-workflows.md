@@ -11,7 +11,7 @@ and you control when to deploy your application with branch and event conditions
 
 You develop a script or use a CI plugin for the deploy, and parameterize each deploy step with environment specific variables.
 
-With multiple environments, rollback steps this becomes hairy, and while it scales to some degree, 
+With multiple environments and rollback steps, this becomes hairy, and while it scales to some degree, 
 pipeline configuration diverge from project to project, and becomes a maintenance burden.
 
 ## Gimlet hooks into your existing CI pipeline through Github statuses

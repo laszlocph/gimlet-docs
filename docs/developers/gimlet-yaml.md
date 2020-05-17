@@ -9,7 +9,7 @@ The `.gimlet.yaml` file allows you to deploy or reconfigure an application in yo
 In the [Deploying a new service](developers/deploy.md) you already saw how you can deploy an application through the Gimlet UI.
 If you know the various options available to fine tune a deployment, you can use the `.gimlet.yaml` file to setup deployment more effectively.
 
-Should you have an other application deployed with Gimlet already. Copying that file and use that as the base for the deployment, can be an effective approach.
+Should you have another application deployed with Gimlet already. Copying that file and use as the base for the deployment can be an effective approach.
 
 !!! note ""
 
@@ -32,7 +32,7 @@ You can manage all the deployments of your app in a single file.
 
 ```yaml
 envs:
-  - env: staging
+  staging:
 ```
 
 !!! note ""
@@ -54,13 +54,13 @@ Set the few required fields to get started, Gimlet provides good defaults for th
 
 ```yaml
 envs:
-  - env: staging
-    strategy: simple
-    trigger: .*/push
-    name: website
-    namespace: marketing
-    image: gimlet.io/website
-    tag: '${COMMIT_SHA:0:8}'
+  staging:
+    - name: website
+      strategy: simple
+      trigger: .*/push
+      namespace: marketing
+      image: gimlet.io/website
+      tag: '${COMMIT_SHA:0:8}'
 ```
 
 !!! note ""

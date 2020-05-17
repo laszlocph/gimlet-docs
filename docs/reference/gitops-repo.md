@@ -26,15 +26,6 @@ Gimlet uses the following folder structure in the GitOps repo:
 
 ```bash
 .
-├── config
-│   ├── app-1
-│   │   ├── app-1-deployment.yaml
-│   │   ├── app-1-service.yaml
-│   │   └── kustomization.yaml
-│   └── demo-app
-│   │   ├── demo-app-deployment.yaml
-│   │   ├── demo-app-service.yaml
-│   │   └── kustomization.yaml
 ├── masterTemplate
 │   ├── base
 │   │   ├── deployment.yaml
@@ -69,7 +60,6 @@ Gimlet uses the following folder structure in the GitOps repo:
         │   └── kustomization.yaml
 ```
 
-- **config** Stores *Kustomize* bases for the deployed applications. Your application manifests that are common in all environments.
 - **masterTemplate** Stores a generic application blueprint. Gimlet uses this template for all new deployments.
 - **releases** is where the deployed application configuration is. FluxCD listens on these folders.
 
