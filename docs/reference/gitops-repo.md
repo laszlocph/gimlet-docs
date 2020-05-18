@@ -34,30 +34,26 @@ Gimlet uses the following folder structure in the GitOps repo:
 │   ├── instance
 │   │   ├── horizontal-pod-autoscaler.yaml
 │   │   ├── kustomization.yaml
-│   │   └── test-ingress.yaml
+│   │   └── ...
 │   ├── patches
 │   │   ├── containerPort.yaml
 │   │   ├── envVars.yaml
 │   │   ├── image-pull-policy-patch.yaml
 │   │   ├── prometheus-scrape-patch.yaml
-│   │   ├── resourceLimits.yaml
-│   │   └── resourceRequests.yaml
+│   │   ├── ...
 │   └── questions.yaml
 └── releases
     ├── production
     │   └── app-1
-    │   │   ├── app-1-test-ingress.yaml
-    │   │   ├── kustomization.yaml
-    │   │   └── patches
-    │   │       └── app-1-containerPort.yaml
+    │   │   ├── service.yaml
+    │   │   └── deployment.yaml
     └── staging
         ├── app-1
-        │   ├── app-1-test-ingress.yaml
-        │   ├── kustomization.yaml
-        │   └── patches
-        │       └── app-1-containerPort.yaml
+    │   │   ├── service.yaml
+    │   │   └── deployment.yaml
         ├── demo-app
-        │   └── kustomization.yaml
+    │   │   ├── service.yaml
+    │   │   └── deployment.yaml
 ```
 
 - **masterTemplate** Stores a generic application blueprint. Gimlet uses this template for all new deployments.

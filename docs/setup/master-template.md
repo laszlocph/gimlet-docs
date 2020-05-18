@@ -22,7 +22,8 @@ The Master Template is part of the GitOps repository, and you are free to look a
 
 The Gimlet Master Template is a *Kustomize* based template.
 
-Using the `.gimlet.yaml` file or the deployment settings given on the UI, Gimlet constructs a valid *Kustomize* template for the application.
+Gimlet combines the values from the`.gimlet.yaml` file, or the deployment settings given on the UI, with the master template and constructs and places a valid application manifest to the `releases` folder.
+Which is then synced to the cluster by Flux.
 
 The available options are defined in the `questions.yaml` which is then merged with the application settings to get the application yamls 
 
