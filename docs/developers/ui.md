@@ -7,10 +7,10 @@ This is an introduction to Gimlet's repository view, where day-to-day tasks happ
 ## UI structure
 
 Gimlet shows you one git repository at a time with all related Kubernetes entities.
-You, as a developer, are able to focus on your application only without any distraction.
+You, as a developer, are able to focus on your application without any distraction.
 
-Furthermore, the repository view combines your code revisions and your deployed application together, 
-so you can follow in real time what version is deployed, and make quick changes when you need to.
+The repository view combines your code revisions, and your deployed application together, 
+so you can follow in real time what version is deployed, make quick changes when you need to.
 
 ## Kubernetes view
 
@@ -37,7 +37,8 @@ Should you have any deployment error, Gimlet surface the root cause on the UI, a
 ## Git view
 
 The second part of the screen shows an up-to-date view of your git repository. You can see your commits, see which ones are deployed currently and where.
-
 You can also promote any revision to any environment in the context menu.
 
 ![Git revisions](./commits.png)
+
+The pill menu allows you to look at recent releases too. If you need to rollback, follow the [Rollback](rollback.md) guide.

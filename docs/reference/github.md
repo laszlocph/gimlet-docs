@@ -1,3 +1,0 @@
-# Github Integration
-
-coming soon...

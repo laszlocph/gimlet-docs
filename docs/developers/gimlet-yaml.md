@@ -45,8 +45,6 @@ Gimlet abstracts the many knobs and levers that a Kubernetes cluster exposes to 
 
 Set the few required fields to get started, Gimlet provides good defaults for the rest.
 
-- **Strategy** - the deployment strategy to follow. Use *simple* for a rolling deployment.
-- **Trigger** - a regular expression that matches the Github status line's name. Gimlet will trigger once this status line is set with success state.
 - **Name** - the name of the deployment. Most likely the git repository name.
 - **Namespace** - your Kubernetes administrator has already communicated this. Most likely it's going to be your team's namespace.
 - **Image name** - the image name you set in your CI pipeline
@@ -56,8 +54,6 @@ Set the few required fields to get started, Gimlet provides good defaults for th
 envs:
   staging:
     - name: website
-      strategy: simple
-      trigger: .*/push
       namespace: marketing
       image: gimlet.io/website
       tag: '${COMMIT_SHA:0:8}'
@@ -67,8 +63,32 @@ envs:
 
     See the all the available deployment options in the [Deployment options](reference/options.md) reference.
 
-## Deploy a revision
+## Push and deploy
 
-Push your changes to git. Once your CI pipeline is done, Gimlet will deploy your application.
+Push your changes now, your repository should show up in Gimlet as configured.
 
-Follow along the deployment on the Gimlet UI, or watch for Slack notifications.
+Make an ad-hoc deploy now. See [Deploy a revision](/developers/deploy#deploy-a-revision) section from the Deploying a new service guide to see how to deploy from the UI.
+
+This first manual deployment is necessary for Gimlet to register webhooks on your repository, and it's also a good exercise to see the deployment succeed. 
+
+## Set an automatic deployment policy
+
+Extend your `.gimlet.yaml` with a deployment policy to enable automatic deployments.
+
+The following example shows a simple CD setup to staging.
+Check the [Deployment policy examples](/developers/deploy-workflows#deployment-policy-examples) to find the policy that suits your needs.
+
+```diff
+envs:
+  staging:
+    - name: website
+      namespace: marketing
+      image: gimlet.io/website
+      tag: '${COMMIT_SHA:0:8}'
++      deploy:
++        event: push
++        branch: master
++        waitForCI: true
+```
+
+Once you are done, push your changes and verify the behavior.

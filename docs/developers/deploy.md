@@ -24,13 +24,13 @@ If you wish to deploy a new repository, expand the repository list and find the 
 
 ## Configure a deploy environment
 
-Once you found your git repository and clicked it, Gimlet shows a list of deployment environments where you can deploy your application.
+Once you found and selected your git repository, Gimlet shows a list of deployment environments where you can deploy your application.
 
-The names of these deployment environments should sound familiar, as your Kubernetes administrator set it up for you. 
+The names of the deployment environments should sound familiar as your Kubernetes administrator has set them up for you. 
 
 ![Repository list](./configure-env.png)
 
-Start configuring one or multiple deployment environments with the `Configure Environment` button.
+Start configuring an environment by adding a new configuration with the `+` buttons.
 
 !!! warning ""
 
@@ -64,13 +64,13 @@ Set the few required fields to get started, Gimlet provides good defaults for th
 
     ```yaml
     envs:
-      - env: staging
-        name: website
-        strategy: simple
-        trigger: .*/push
-        namespace: marketing
-        image: gimlet.io/website
-        tag: '${COMMIT_SHA:0:8}'
+      staging:
+        - name: website
+          namespace: marketing
+          trigger: .*/push
+          image: myregistry.com/website
+          tag: '${COMMIT_SHA:0:8}'
+          replicas: 1
     ```
 
 ## Deploy a revision
@@ -79,7 +79,7 @@ Let's trigger an ad-hoc deployment now that you have configured a deployment env
 
 ![Deploy](./deploy.png)
 
-Pick the any commit from the commit list and in the hamburger menu on the right side click `Deploy to staging`
+Pick the any commit from the commit list and in the hamburger menu on the right side. Click `Deploy to staging`
 - given that you configured the *staging* environment in the previous step.
 
 !!! note ""

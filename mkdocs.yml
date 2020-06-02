@@ -28,7 +28,6 @@ nav:
   - Reference:
       - The GitOps repository: reference/gitops-repo.md
       - Deployment options: reference/options.md
-      - Github Integration: reference/github.md
   - FAQ: faq.md
 
 extra:
