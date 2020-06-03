@@ -5,7 +5,7 @@
 | name     | The name of your application | string | `account-service` |
 | namespace      | The namespace to deploy your application in | string | `core-team` |
 | image | The image to deploy, without the tag | string | `mycompany/account-service` |
-| tag | The tag of the deployed image <br /><br /> You can use the `COMMIT_SHA` variable to inject the deployed commit's hash, and apply string functions on it | string | `${COMMIT_SHA}` the full hash <br /> `${COMMIT_SHA:0:9}`  hash with its first 8 characters |
+| tag | The tag of the deployed image <br /><br /> Use the `COMMIT_SHA` and `TAG` variables to inject git metadata. Apply string functions to match your image tag pattern | string | `${COMMIT_SHA}` the full hash <br /> `${COMMIT_SHA:0:9}`  hash with its first 8 characters |
 | containerPort | The port your application is listening on | string | `8080` |
 | ingress.subdomain | The subdomain your app is going to be exposed on <<subdomain>>.your-ingress-domain.tld | string | `accounts` |
 | requests.cpu | Your average CPU usage. This is what Kubernetes is using to place your workload. | string | `100m` - 1/10 of a CPU core |
