@@ -20,3 +20,7 @@ The GitOps controller can be looked at as an endless loop that runs `kubectl app
 Gimlet is encapsulating all the logic to update the gitops repository in a consistent, environment aware fashion.
 
 The GitOps abstraction allows Gimlet to package much of the logic that previously was scattered in CI pipelines and implemented by every company.
+
+<!-- Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" site="KVEHKPCQ" defer></script>
+<!-- / Fathom -->

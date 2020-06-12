@@ -285,3 +285,7 @@ spec:
 To change the Master Template, you can edit any file in the template. Next time you deploy, Gimlet will update your application's manifest according to the new Master Template.
 
 To extend the template, you have to add new variables in the `questions.yaml` file and change the existing template yamls, or add new Kustomize patch or resource files.
+
+<!-- Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" site="KVEHKPCQ" defer></script>
+<!-- / Fathom -->

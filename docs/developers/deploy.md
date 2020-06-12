@@ -88,3 +88,7 @@ Pick the any commit from the commit list and in the hamburger menu on the right 
     
     Revisit the *Image name* and *Image tag* fields in the [Set mandatory fields](#set-the-mandatory-fields) section to see what you configured.
     Jump to the [Deployment workflows](deploy-workflows.md) guide for more information on CI and Gimlet interplay.
+
+<!-- Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" site="KVEHKPCQ" defer></script>
+<!-- / Fathom -->

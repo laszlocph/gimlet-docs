@@ -13,10 +13,6 @@ nav:
       - GitOps: concepts/gitops.md
       - Architecture: concepts/architecture.md
   - Setup:
-      - Initial Setup: setup/initial-setup.md
-      - Slack integration: setup/slack.md
-      - Gimlet Agent: setup/agent.md
-      - Gitops Repository: setup/gitops-repo.md
       - Master Template: setup/master-template.md
   - For Developers:
       - Deploying a new service: developers/deploy.md
@@ -24,7 +20,6 @@ nav:
       - Deployment workflows: developers/deploy-workflows.md
       - .gimlet.yaml: developers/gimlet-yaml.md
       - Rollback: developers/rollback.md
-      - Preview environments: developers/preview.md
   - Reference:
       - The GitOps repository: reference/gitops-repo.md
       - Deployment options: reference/options.md

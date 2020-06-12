@@ -62,3 +62,7 @@ Gimlet uses the following folder structure in the GitOps repo:
 !!! note ""
 
     See the [Master Template](/setup/master-template) guide to see how the Master Template is structured.
+
+<!-- Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" site="KVEHKPCQ" defer></script>
+<!-- / Fathom -->

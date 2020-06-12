@@ -22,3 +22,7 @@
     
     
     If you would like to change or add new deployment options, check out the [Master Template](|setup|master-template) guide.
+    
+<!-- Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" site="KVEHKPCQ" defer></script>
+<!-- / Fathom -->

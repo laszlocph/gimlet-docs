@@ -92,3 +92,7 @@ envs:
 ```
 
 Once you are done, push your changes and verify the behavior.
+
+<!-- Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" site="KVEHKPCQ" defer></script>
+<!-- / Fathom -->

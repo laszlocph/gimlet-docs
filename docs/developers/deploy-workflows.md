@@ -215,3 +215,7 @@ envs:
         waitForCI: true
 +       ciJobFilter: .*/apply-semantic-version
 ```
+
+<!-- Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" site="KVEHKPCQ" defer></script>
+<!-- / Fathom -->

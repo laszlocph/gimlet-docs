@@ -43,3 +43,7 @@
     
     ArgoCD is a more feature rich GitOps tool. Gimlet and ArgoCD are more of a direct competitors.
     However Gimlet aims to assist not just in deployment, but in other areas as well, like application operation and developer on-boarding, education.
+    
+<!-- Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" site="KVEHKPCQ" defer></script>
+<!-- / Fathom -->
