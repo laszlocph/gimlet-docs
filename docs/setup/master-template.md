@@ -363,7 +363,7 @@ questions:
 #### Minimum ratio between values
 
 ```diff
-questions
+questions:
   - variable: requests
     label: Resource Requests
     description: "Requests are used by the cluster scheduler to place your workload on the best suiting server node."
@@ -395,7 +395,7 @@ Fails the validation if `value/targetVariableValue < rule.value`.
 #### Maximum ratio between values
 
 ```diff
-questions
+questions:
   - variable: requests
     label: Resource Requests
     description: "Requests are used by the cluster scheduler to place your workload on the best suiting server node."
@@ -433,3 +433,81 @@ To extend the template, you have to add new variables in the `questions.yaml` fi
 <!-- Fathom - beautiful, simple website analytics -->
 <script src="https://cdn.usefathom.com/script.js" site="KVEHKPCQ" defer></script>
 <!-- / Fathom -->
+
+### Over-committing cluster resources using min and `maxRatio`
+
+As a cluster administrator you want to be in control of cluster resources. Over-comitting can save money, but extensive over-committing can cause issues down the line.
+
+With `minRatio` and `maxRatio` you can keep over-committing in a desired range.
+
+Edit the Master Template to reflect your policies.
+
+#### Conservative CPU over-commit
+
+This example follows a more moderate over-commit approach. Allows to burst each resource to use 5X of its budgeted CPU.
+
+```diff
+questions:
+  - variable: requests
+    label: Resource Requests
+    description: "Requests are used by the cluster scheduler to place your workload on the best suiting server node."
+    type: complex
+    required: false
+    group: resources
+    patch: resourceRequests.yaml
+    subquestions:
+      - variable: cpu
+        label: CPU
+        description: "Indicates the average CPU usage of the application. 1000 CPU shares = 1 CPU core"
+        type: int
+        default: 500
+        range:
+          min: 100
+          max: 8000
+          step: 100
+        unit: "m"
+        readableUnit: "shares"
+        validation:
+          - type: minRatio
+            variable: limits.cpu
+-           value: 0.1
++           value: 0.2
+            description: "CPU limits should be a maximum of 10X of CPU requests. We are over-provisioning our cluster on purpose, but anything over 10X could hurt uptime. Please adjust your request or limit."
+```
+
+#### Strict memory management
+
+This example does not allow any memory over-commit.
+
+While CPU over-commit only slows things down should all workload burst at the same time.
+Memory over-commit starts evicting pods, which may cause downtime of workloads.
+
+```yaml
+questions:
+  - variable: requests
+    label: Resource Requests
+    description: "Requests are used by the cluster scheduler to place your workload on the best suiting server node."
+    type: complex
+    required: false
+    group: resources
+    patch: resourceRequests.yaml
+    subquestions:
+      - variable: cpu
+        label: CPU
+        description: "Indicates the average CPU usage of the application. 1000 CPU shares = 1 CPU core"
+        type: int
+        default: 500
+        range:
+          min: 100
+          max: 8000
+          step: 100
+        unit: "m"
+        readableUnit: "shares"
+        validation:
+        - type: minRatio
+          value: "1"
+          variable: limits.memory
+        - type: maxRatio
+          value: "1"
+          variable: limits.memory
+```
