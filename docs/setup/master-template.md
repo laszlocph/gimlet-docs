@@ -507,7 +507,9 @@ questions:
         - type: minRatio
           value: "1"
           variable: limits.memory
+          description: "Memory requests must be equal to memory limits. We don't allow memory over-commit in our cluster to prevent out of memory errors. Please adjust your request or limit."
         - type: maxRatio
           value: "1"
           variable: limits.memory
+          description: "Memory requests can not be higher than memory limits. Please adjust your request or limit."
 ```
