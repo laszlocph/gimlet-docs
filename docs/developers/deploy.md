@@ -60,7 +60,7 @@ Set the few required fields to get started, Gimlet provides good defaults for th
     You may have noticed that while you were setting the environment options, Gimlet updated the `.gimlet.yaml` config at the bottom of the page.
     
     If you prefer you can skip using the Gimlet UI, and enable deployment right in your source code.
-    Follow the [`.gimlet.yaml`](/developers/gimlet-yaml.md) guide for more details
+    Follow the [`.gimlet.yaml`](/developers/gimlet-yaml) guide for more details
 
     ```yaml
     envs:
