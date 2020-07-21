@@ -85,7 +85,7 @@ Set the following fields:
 ![Application link](./bb-applink.png)
 
 
-Once you created the application, it needs to be edited so that you can configure the Incoming Authentication.
+Once you created the application, it needs to be edited so that you can configure the *Incoming Authentication*.
 
 Please fill out the form using the values specified below and save your changes.
 
@@ -97,7 +97,7 @@ Please fill out the form using the values specified below and save your changes.
 
 ## Install Gimlet
 
-You configure Gimlet with Bitbucket using environment variables.
+You configure Gimlet using environment variables.
 
 ### Configuration reference
 
