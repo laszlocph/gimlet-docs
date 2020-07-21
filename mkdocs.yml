@@ -13,6 +13,7 @@ nav:
       - GitOps: concepts/gitops.md
       - Architecture: concepts/architecture.md
   - Setup:
+      - Self-host with Bitbucket Server: setup/bitbucket-server.md
       - Master Template: setup/master-template.md
   - For Developers:
       - Deploying a new service: developers/deploy.md
