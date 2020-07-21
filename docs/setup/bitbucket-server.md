@@ -1,6 +1,6 @@
 # Self-host with Bitbucket Server
 
-On this page you will learn how to install the self hosted version of Gimlet on premise.
+On this page you will learn how to install the self hosted version of Gimlet.io.
 
 You will use a self hosted Bitbucket Server as source code management system.
 
