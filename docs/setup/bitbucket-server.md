@@ -1,4 +1,4 @@
-# Self-host with Bitbucket Server
+# On-premise installation with Bitbucket Server
 
 On this page you will learn how to install the self hosted version of Gimlet.io.
 
@@ -114,10 +114,88 @@ You configure Gimlet using environment variables.
 | `BITBUCKET_SERVER_CONSUMER_SECRET`  | To use in the Bitbucket OAuth flow     | `-----BEGIN RSA PRIVATE KEY----- ...` |
 | `BITBUCKET_SERVER_SKIP_VERIFY`  | If your Bitubcket server doesn't use SSL     | `true` |
 
-### Deployment manifest
+### Prepare the image pull credentials
 
-```yaml
+With your license comes your registry secret credentials that you can use to pull the Gimlet server image
 
+```bash
+export NAMESPACE=xxx
 
+kubectl create secret docker-registry registry.gimlet.io \
+    --docker-server=registry.gimlet.io \
+    --docker-username=xxx \
+    --docker-password=xxx \
+    --docker-email=xxx \
+    -n $NAMESPACE
 ```
 
+### Prepare the Bitbucket credentials
+
+Use the values you prepared on the Bitbucket Server UI:
+
+```bash
+kubectl create secret generic gimlet-bitbucket \
+    --from-literal=BITBUCKET_SERVER_USER=xxx \
+    --from-literal=BITBUCKET_SERVER_TOKEN=xxx \
+    --from-literal=BITBUCKET_SERVER_CONSUMER_SECRET=xxx \
+    -n $NAMESPACE
+```
+
+Set the previously generated private key:
+
+```bash
+kubectl create secret generic gimlet-bitbucket-privatekey \
+    --from-file=bitbucket.pem=/path/to/bitbucket.pem \
+    -n $NAMESPACE
+```
+
+### Helm chart
+
+Add Gimlet's Helm chart repo:
+
+```bash
+helm repo add gimlet-io https://gimlet-io.github.io/helm-chart/
+```
+
+Configure Gimlet:
+
+```bash
+cat << EOF > values.yaml
+
+config:
+  host: https://gimlet.mycompany.com
+  bitbucketServer:
+    serverAddress: myaddress
+
+ingress:
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    kubernetes.io/ingress.class: "traefik"
+    ingress.kubernetes.io/ssl-redirect: "true"
+  hosts:
+    - host: gimlet.mycompany.com
+      paths:
+        - ""
+  tls:
+    - secretName: tls-gimlet-mycompany-com
+      hosts:
+        - gimlet.mycompany.com
+
+storageClass: local-path
+
+EOF
+```
+
+Finally, install Gimlet:
+
+```bash
+helm install gimlet gimlet-io/gimlet -f values.yaml
+```
+
+Check the Gimlet server container for errors and logs.
+
+Adjust server parameters with:
+
+```bash
+helm upgrade gimlet gimlet-io/gimlet -f values.yaml
+```
