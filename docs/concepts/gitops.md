@@ -10,7 +10,9 @@ Gimlet uses the term in the strict [Weave Works definition](https://www.weave.wo
 
 To pin it even more down, Gimlet is using the GitOps term as a synonym of the FluxCD and ArgoCD implementations.
 
-## In a nutshell
+## Workflow
+
+![Gitops workflow](./gitops-workflow.svg)
 
 CI pipelines do not apply (with kubectl or helm) Kubernetes manifests on the cluster anymore. Instead, you record the desired state in a git repository, 
 and the GitOps controller is responsible to apply the changes on the Kubernetes cluster.
