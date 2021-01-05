@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/*"
+  to = "https://gimlet.io/gimlet-cli/getting-started"
+  status = 301
+  force = true
